@@ -16,7 +16,7 @@ namespace TestScoring
     {
         public List<Season> seasons;
 
-        public const string fileName = @".\xmlFile\Sample.xml";
+        public const string fileName = @".\Sample.xml";
 
 
         public Home()
