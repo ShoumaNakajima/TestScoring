@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(491, 450);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Table";
-            this.Text = "Form2";
+            this.Text = "一覧";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
