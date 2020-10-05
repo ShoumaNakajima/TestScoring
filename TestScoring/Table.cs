@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+#nullable enable annotations
+
 namespace TestScoring
 {
     public partial class Table : Form
@@ -23,7 +25,7 @@ namespace TestScoring
             SucceededCreatingWindow = InitAllSeason(seasonList);
         }
 
-        public Table(List<Season> seasonList,string searchSeasonName,string searchSubjectName)
+        public Table(List<Season> seasonList,string searchSeasonName,string? searchSubjectName)
         {
             InitializeComponent();
 
@@ -75,7 +77,7 @@ namespace TestScoring
                     {
                         var studentInfo = subject.studentInfos[k];
 
-                        this.dataGridView1.Rows.Add(season.Year + season.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
+                        dataGridView1.Rows.Add(season.Year + season.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
                     }
                 }
             }
@@ -96,7 +98,7 @@ namespace TestScoring
             dataGridView1.Columns[2].HeaderText = "名前";
             dataGridView1.Columns[3].HeaderText = "点数";
 
-            Season searchSeason = seasonList.Find(season => season.Year + season.prophaseOrAnaphase == searchSeasonName);
+            Season? searchSeason = seasonList.Find(season => season.Year + season.prophaseOrAnaphase == searchSeasonName);
 
             if(searchSeason == null)
             {
@@ -112,7 +114,7 @@ namespace TestScoring
                 {
                     var studentInfo = subject.studentInfos[j];
 
-                    this.dataGridView1.Rows.Add(searchSeason.Year + searchSeason.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
+                    dataGridView1.Rows.Add(searchSeason.Year + searchSeason.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
                 }
             
             }
@@ -132,7 +134,7 @@ namespace TestScoring
             dataGridView1.Columns[1].HeaderText = "名前";
             dataGridView1.Columns[2].HeaderText = "点数";
 
-            Season searchSeason = seasonList.Find(season => season.Year + season.prophaseOrAnaphase == searchSeasonName);
+            Season? searchSeason = seasonList.Find(season => season.Year + season.prophaseOrAnaphase == searchSeasonName);
 
             if (searchSeason == null)
             {
@@ -140,7 +142,7 @@ namespace TestScoring
                 return false;
             }
 
-            Subject searchSubject = searchSeason.subjects.Find(subject => subject.Name == searchSubjectName);
+            Subject? searchSubject = searchSeason.subjects.Find(subject => subject.Name == searchSubjectName);
 
             if (searchSubject == null)
             {
@@ -152,7 +154,7 @@ namespace TestScoring
             {
                 var studentInfo = searchSubject.studentInfos[i];
 
-                this.dataGridView1.Rows.Add(searchSubject.Name, studentInfo.Name, studentInfo.Score);
+                dataGridView1.Rows.Add(searchSubject.Name, studentInfo.Name, studentInfo.Score);
             }
             return true;
         }        

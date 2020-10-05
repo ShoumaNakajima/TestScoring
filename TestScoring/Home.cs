@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Xml.Linq;
+
+#nullable enable annotations
+
 //コンポジットパターン
 namespace TestScoring
 {
@@ -16,17 +19,11 @@ namespace TestScoring
     {
         public List<Season> seasons;
 
-        public const string fileName = @".\Sample.xml";
-
+        public const string fileName = @".\ScoreFile.xml";
 
         public Home()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -100,7 +97,7 @@ namespace TestScoring
                     ));
 
             //教科の追加
-            for (int i = 0;i< allSubjectsName.Length;i++)
+            for (int i = 0; i < allSubjectsName.Length;i++)
             {
                 bool isDuplicateName = false;
 
@@ -145,22 +142,12 @@ namespace TestScoring
             comboBox2.Items.AddRange(studentsName);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -213,14 +200,13 @@ namespace TestScoring
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Season>));
 
-            System.IO.StreamReader streamReader = null;
+            System.IO.StreamReader? streamReader = null;
 
             try
             {
                  streamReader = new System.IO.StreamReader(fileName);
                  seasons = (List<Season>)serializer.Deserialize(streamReader);
                  streamReader.Close();
-
             }
             catch
             {
@@ -230,6 +216,13 @@ namespace TestScoring
 
         public void XMLOutput()
         {
+            var result = MessageBox.Show("本当に保存しますか？", "Select", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+            if (result == DialogResult.No)
+            {
+                // 保存を中止
+                return;
+            }
+
             //Serializationのインスタンス生成
             XmlSerializer serializer = new XmlSerializer(typeof(List<Season>));
             //StreamWriterのインスタンス生成
@@ -239,19 +232,6 @@ namespace TestScoring
             streamWriter.Close();
 
             MessageBox.Show("保存しました", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-        }
-
-        public void UpdatecomboBox1()
-        {
-            string[] items = null;
-            for(int i = 0 ;i < seasons.Count; i++)
-            {
-                Array.Resize(ref items, items.Length + 1);
-                items[items.Length - 1] = (seasons[i].Year.ToString() + seasons[i].ToString());
-            }
-
-            comboBox1.Text = items[0];
-            comboBox1.Items.AddRange(items);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -289,11 +269,11 @@ namespace TestScoring
             {
                 AddComboBox();
                 MessageBox.Show("追加しました", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }else
+            }
+            else
             {
                 MessageBox.Show("追加に失敗しました", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private bool FindSeason()
@@ -310,7 +290,7 @@ namespace TestScoring
 
         private bool FindSubject()
         {
-            var season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
 
             if (season == null) return false;
 
@@ -326,11 +306,11 @@ namespace TestScoring
 
         private bool FindStudent()
         {
-            var season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
 
             if (season == null) return false;
 
-            var subject = season.subjects.Find(subjectName => subjectName.Name == comboBox1.Text);
+            Subject? subject = season.subjects.Find(subjectName => subjectName.Name == comboBox1.Text);
 
             if (subject == null) return false;
 
@@ -378,7 +358,7 @@ namespace TestScoring
 
             bool isExist = false;
 
-            var season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
 
             for (int i = 0; i < season.subjects.Count; i++)
             {
@@ -395,6 +375,7 @@ namespace TestScoring
             }
 
             season.subjects.Add(subject);
+
             return true;
         }
 
@@ -404,9 +385,9 @@ namespace TestScoring
 
             bool isExist = false;
 
-            var season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
 
-            var subject = season.subjects.Find(subjectName => subjectName.Name == comboBox1.Text);
+            Subject? subject = season.subjects.Find(subjectName => subjectName.Name == comboBox1.Text);
 
             for(int i = 0;i < subject.studentInfos.Count; i++)
             {
@@ -423,6 +404,7 @@ namespace TestScoring
             }
 
             subject.studentInfos.Add(studentInfo);
+
             return true;
         }
 
@@ -468,11 +450,6 @@ namespace TestScoring
         {
             Table table = new Table(seasons, numericUpDown2.Value + comboBox3.Text, comboBox5.Text);
             table.Show();
-            
-            if(table.SucceededCreatingWindow == false)
-            {
-                //table;
-            }
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -488,9 +465,28 @@ namespace TestScoring
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("アプリケーションを閉じますか？", "", MessageBoxButtons.YesNo, MessageBoxIcon.None);
-            MessageBox.Show("保存しましたか？", "", MessageBoxButtons.YesNo, MessageBoxIcon.None);
-            MessageBox.Show("本当に終了しますか？", "", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+            DialogResult result = MessageBox.Show("アプリケーションを終了しますか？", "Select", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+
+            if (result == DialogResult.No)
+            {
+                // 終了処理を中止
+                e.Cancel = true;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "・技術面" + Environment.NewLine +
+                "初めてtry catchを使用した" + Environment.NewLine +
+                "ListのLinqを多用した" + Environment.NewLine +
+                "nullを許容するかどうかを意識しました（Null許容型参照を使用した）" + Environment.NewLine +
+                "XMLFileの入出力はするが利用者側が触れないようにするため、パスの指定などを考えて作った" + Environment.NewLine +
+                Environment.NewLine +
+                "・見た目" + Environment.NewLine +
+                "MessageBoxを用いてUI/UXに配慮して作った" + Environment.NewLine +
+                "教科名や生徒の名前などのコンボボックスの要素を追加するたびに更新して入力しやすいように配慮した" + Environment.NewLine
+                , "アピールポイント", MessageBoxButtons.OK,MessageBoxIcon.None);
         }
     }
 }

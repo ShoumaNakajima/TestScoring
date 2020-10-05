@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#nullable enable annotations
+
 namespace TestScoring
 {
     public class Subject
@@ -13,6 +15,7 @@ namespace TestScoring
         public List<StudentInfo> studentInfos;
 
         public Subject() { }
+
         public Subject(string subjectName)
         {
             Name = subjectName;
