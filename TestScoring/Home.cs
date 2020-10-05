@@ -481,7 +481,7 @@ namespace TestScoring
                 "初めてtry catchを使用した" + Environment.NewLine +
                 "ListのLinqを多用した" + Environment.NewLine +
                 "nullを許容するかどうかを意識しました（Null許容型参照を使用した）" + Environment.NewLine +
-                "XMLFileの入出力はするが利用者側が触れないようにするため、パスの指定などを考えて作った" + Environment.NewLine +
+                "XMLFileの入出力はするが利用者側が触れないようにするため、パスの指定なども考えて作った" + Environment.NewLine +
                 Environment.NewLine +
                 "・見た目" + Environment.NewLine +
                 "MessageBoxを用いてUI/UXに配慮して作った" + Environment.NewLine +
