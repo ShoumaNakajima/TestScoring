@@ -28,123 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nudAddScore = new System.Windows.Forms.NumericUpDown();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lblAddSubject = new System.Windows.Forms.Label();
+            this.lblAddScore = new System.Windows.Forms.Label();
+            this.lblAddStudent = new System.Windows.Forms.Label();
+            this.btnTable = new System.Windows.Forms.Button();
+            this.cmdAddSubject = new System.Windows.Forms.ComboBox();
+            this.cmdAddStudent = new System.Windows.Forms.ComboBox();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.cmdFindSemester = new System.Windows.Forms.ComboBox();
+            this.cmdFindSubjct = new System.Windows.Forms.ComboBox();
+            this.lblFindSubject = new System.Windows.Forms.Label();
+            this.nudFindYear = new System.Windows.Forms.NumericUpDown();
+            this.lblFindYear = new System.Windows.Forms.Label();
+            this.lblFindSemester = new System.Windows.Forms.Label();
+            this.lblAddSemester = new System.Windows.Forms.Label();
+            this.lblAddYear = new System.Windows.Forms.Label();
+            this.nudAddYear = new System.Windows.Forms.NumericUpDown();
+            this.cmdAddSemester = new System.Windows.Forms.ComboBox();
+            this.lblSeason = new System.Windows.Forms.Label();
+            this.grpAdd = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.grpFind = new System.Windows.Forms.GroupBox();
+            this.btnAppeal = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAddScore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFindYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAddYear)).BeginInit();
+            this.grpAdd.SuspendLayout();
+            this.grpFind.SuspendLayout();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // nudAddScore
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(218, 280);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(50, 19);
-            this.numericUpDown1.TabIndex = 2;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.nudAddScore.Location = new System.Drawing.Point(218, 280);
+            this.nudAddScore.Name = "nudAddScore";
+            this.nudAddScore.Size = new System.Drawing.Size(50, 19);
+            this.nudAddScore.TabIndex = 2;
+            this.nudAddScore.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(160, 352);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "追加";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.Location = new System.Drawing.Point(160, 352);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 30);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "追加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // lblAddSubject
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "教科名";
+            this.lblAddSubject.AutoSize = true;
+            this.lblAddSubject.Location = new System.Drawing.Point(37, 177);
+            this.lblAddSubject.Name = "lblAddSubject";
+            this.lblAddSubject.Size = new System.Drawing.Size(41, 12);
+            this.lblAddSubject.TabIndex = 5;
+            this.lblAddSubject.Text = "教科名";
             // 
-            // label3
+            // lblAddScore
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "点数";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblAddScore.AutoSize = true;
+            this.lblAddScore.Location = new System.Drawing.Point(37, 280);
+            this.lblAddScore.Name = "lblAddScore";
+            this.lblAddScore.Size = new System.Drawing.Size(29, 12);
+            this.lblAddScore.TabIndex = 7;
+            this.lblAddScore.Text = "点数";
+            this.lblAddScore.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // lblAddStudent
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "名前";
+            this.lblAddStudent.AutoSize = true;
+            this.lblAddStudent.Location = new System.Drawing.Point(37, 222);
+            this.lblAddStudent.Name = "lblAddStudent";
+            this.lblAddStudent.Size = new System.Drawing.Size(29, 12);
+            this.lblAddStudent.TabIndex = 8;
+            this.lblAddStudent.Text = "名前";
             // 
-            // button3
+            // btnTable
             // 
-            this.button3.Location = new System.Drawing.Point(243, 352);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 30);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "一覧";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTable.Location = new System.Drawing.Point(243, 352);
+            this.btnTable.Name = "btnTable";
+            this.btnTable.Size = new System.Drawing.Size(75, 30);
+            this.btnTable.TabIndex = 10;
+            this.btnTable.Text = "一覧";
+            this.btnTable.UseVisualStyleBackColor = true;
+            this.btnTable.Click += new System.EventHandler(this.button3_Click);
             // 
-            // comboBox1
+            // cmdAddSubject
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(110, 174);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 20);
-            this.comboBox1.TabIndex = 100;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmdAddSubject.FormattingEnabled = true;
+            this.cmdAddSubject.Location = new System.Drawing.Point(110, 174);
+            this.cmdAddSubject.Name = "cmdAddSubject";
+            this.cmdAddSubject.Size = new System.Drawing.Size(158, 20);
+            this.cmdAddSubject.TabIndex = 100;
+            this.cmdAddSubject.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cmdAddStudent
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(110, 219);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 20);
-            this.comboBox2.Sorted = true;
-            this.comboBox2.TabIndex = 100;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cmdAddStudent.FormattingEnabled = true;
+            this.cmdAddStudent.Location = new System.Drawing.Point(110, 219);
+            this.cmdAddStudent.Name = "cmdAddStudent";
+            this.cmdAddStudent.Size = new System.Drawing.Size(158, 20);
+            this.cmdAddStudent.Sorted = true;
+            this.cmdAddStudent.TabIndex = 100;
+            this.cmdAddStudent.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Location = new System.Drawing.Point(53, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 30);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "編集";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnEdit.Location = new System.Drawing.Point(53, 352);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 30);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "編集";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -155,226 +155,229 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "時期";
             // 
-            // comboBox3
+            // cmdFindSemester
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(199, 130);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(94, 20);
-            this.comboBox3.TabIndex = 17;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cmdFindSemester.FormattingEnabled = true;
+            this.cmdFindSemester.Location = new System.Drawing.Point(199, 130);
+            this.cmdFindSemester.Name = "cmdFindSemester";
+            this.cmdFindSemester.Size = new System.Drawing.Size(94, 20);
+            this.cmdFindSemester.TabIndex = 17;
+            this.cmdFindSemester.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // comboBox5
+            // cmdFindSubjct
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(135, 222);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(158, 20);
-            this.comboBox5.TabIndex = 100;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.cmdFindSubjct.FormattingEnabled = true;
+            this.cmdFindSubjct.Location = new System.Drawing.Point(135, 222);
+            this.cmdFindSubjct.Name = "cmdFindSubjct";
+            this.cmdFindSubjct.Size = new System.Drawing.Size(158, 20);
+            this.cmdFindSubjct.TabIndex = 100;
+            this.cmdFindSubjct.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
-            // label5
+            // lblFindSubject
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 12);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "教科名";
+            this.lblFindSubject.AutoSize = true;
+            this.lblFindSubject.Location = new System.Drawing.Point(44, 182);
+            this.lblFindSubject.Name = "lblFindSubject";
+            this.lblFindSubject.Size = new System.Drawing.Size(41, 12);
+            this.lblFindSubject.TabIndex = 19;
+            this.lblFindSubject.Text = "教科名";
             // 
-            // numericUpDown2
+            // nudFindYear
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(243, 82);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(50, 19);
-            this.numericUpDown2.TabIndex = 21;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.nudFindYear.Location = new System.Drawing.Point(243, 82);
+            this.nudFindYear.Name = "nudFindYear";
+            this.nudFindYear.Size = new System.Drawing.Size(50, 19);
+            this.nudFindYear.TabIndex = 21;
+            this.nudFindYear.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
-            // label6
+            // lblFindYear
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(124, 84);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "年度";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.lblFindYear.AutoSize = true;
+            this.lblFindYear.Location = new System.Drawing.Point(124, 84);
+            this.lblFindYear.Name = "lblFindYear";
+            this.lblFindYear.Size = new System.Drawing.Size(29, 12);
+            this.lblFindYear.TabIndex = 22;
+            this.lblFindYear.Text = "年度";
+            this.lblFindYear.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
+            // lblFindSemester
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(94, 133);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 12);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "前期・後期";
+            this.lblFindSemester.AutoSize = true;
+            this.lblFindSemester.Location = new System.Drawing.Point(94, 133);
+            this.lblFindSemester.Name = "lblFindSemester";
+            this.lblFindSemester.Size = new System.Drawing.Size(59, 12);
+            this.lblFindSemester.TabIndex = 23;
+            this.lblFindSemester.Text = "前期・後期";
+            this.lblFindSemester.Click += new System.EventHandler(this.label7_Click);
             // 
-            // label8
+            // lblAddSemester
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(69, 128);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 12);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "前期・後期";
+            this.lblAddSemester.AutoSize = true;
+            this.lblAddSemester.Location = new System.Drawing.Point(69, 128);
+            this.lblAddSemester.Name = "lblAddSemester";
+            this.lblAddSemester.Size = new System.Drawing.Size(59, 12);
+            this.lblAddSemester.TabIndex = 28;
+            this.lblAddSemester.Text = "前期・後期";
+            this.lblAddSemester.Click += new System.EventHandler(this.label8_Click);
             // 
-            // label9
+            // lblAddYear
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(99, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 12);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "年度";
+            this.lblAddYear.AutoSize = true;
+            this.lblAddYear.Location = new System.Drawing.Point(99, 79);
+            this.lblAddYear.Name = "lblAddYear";
+            this.lblAddYear.Size = new System.Drawing.Size(29, 12);
+            this.lblAddYear.TabIndex = 27;
+            this.lblAddYear.Text = "年度";
             // 
-            // numericUpDown3
+            // nudAddYear
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(218, 77);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(50, 19);
-            this.numericUpDown3.TabIndex = 26;
-            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            this.nudAddYear.Location = new System.Drawing.Point(218, 77);
+            this.nudAddYear.Name = "nudAddYear";
+            this.nudAddYear.Size = new System.Drawing.Size(50, 19);
+            this.nudAddYear.TabIndex = 26;
+            this.nudAddYear.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
-            // comboBox4
+            // cmdAddSemester
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(174, 125);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(94, 20);
-            this.comboBox4.TabIndex = 25;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged_1);
+            this.cmdAddSemester.FormattingEnabled = true;
+            this.cmdAddSemester.Location = new System.Drawing.Point(174, 125);
+            this.cmdAddSemester.Name = "cmdAddSemester";
+            this.cmdAddSemester.Size = new System.Drawing.Size(94, 20);
+            this.cmdAddSemester.TabIndex = 25;
+            this.cmdAddSemester.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged_1);
             // 
-            // label10
+            // lblSeason
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(37, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 12);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "時期";
+            this.lblSeason.AutoSize = true;
+            this.lblSeason.Location = new System.Drawing.Point(37, 33);
+            this.lblSeason.Name = "lblSeason";
+            this.lblSeason.Size = new System.Drawing.Size(29, 12);
+            this.lblSeason.TabIndex = 24;
+            this.lblSeason.Text = "時期";
+            this.lblSeason.Click += new System.EventHandler(this.season_Click);
             // 
-            // groupBox1
+            // grpAdd
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(365, 404);
-            this.groupBox1.TabIndex = 29;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "新規追加";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.grpAdd.Controls.Add(this.btnSave);
+            this.grpAdd.Controls.Add(this.lblSeason);
+            this.grpAdd.Controls.Add(this.lblAddSemester);
+            this.grpAdd.Controls.Add(this.nudAddScore);
+            this.grpAdd.Controls.Add(this.lblAddYear);
+            this.grpAdd.Controls.Add(this.btnAdd);
+            this.grpAdd.Controls.Add(this.nudAddYear);
+            this.grpAdd.Controls.Add(this.lblAddSubject);
+            this.grpAdd.Controls.Add(this.cmdAddSemester);
+            this.grpAdd.Controls.Add(this.lblAddScore);
+            this.grpAdd.Controls.Add(this.lblAddStudent);
+            this.grpAdd.Controls.Add(this.cmdAddSubject);
+            this.grpAdd.Controls.Add(this.cmdAddStudent);
+            this.grpAdd.Controls.Add(this.btnEdit);
+            this.grpAdd.Location = new System.Drawing.Point(12, 12);
+            this.grpAdd.Name = "grpAdd";
+            this.grpAdd.Size = new System.Drawing.Size(365, 404);
+            this.grpAdd.TabIndex = 29;
+            this.grpAdd.TabStop = false;
+            this.grpAdd.Text = "新規追加";
+            this.grpAdd.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Location = new System.Drawing.Point(268, 352);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 30);
-            this.button4.TabIndex = 101;
-            this.button4.Text = "保存";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnSave.Location = new System.Drawing.Point(268, 352);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 30);
+            this.btnSave.TabIndex = 101;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button4_Click);
             // 
-            // groupBox2
+            // grpFind
             // 
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Location = new System.Drawing.Point(423, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(365, 408);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "検索";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.grpFind.Controls.Add(this.btnAppeal);
+            this.grpFind.Controls.Add(this.btnFind);
+            this.grpFind.Controls.Add(this.label1);
+            this.grpFind.Controls.Add(this.lblFindSemester);
+            this.grpFind.Controls.Add(this.btnTable);
+            this.grpFind.Controls.Add(this.lblFindYear);
+            this.grpFind.Controls.Add(this.cmdFindSemester);
+            this.grpFind.Controls.Add(this.nudFindYear);
+            this.grpFind.Controls.Add(this.lblFindSubject);
+            this.grpFind.Controls.Add(this.cmdFindSubjct);
+            this.grpFind.Location = new System.Drawing.Point(423, 12);
+            this.grpFind.Name = "grpFind";
+            this.grpFind.Size = new System.Drawing.Size(365, 408);
+            this.grpFind.TabIndex = 30;
+            this.grpFind.TabStop = false;
+            this.grpFind.Text = "検索";
+            this.grpFind.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // button5
+            // btnAppeal
             // 
-            this.button5.Location = new System.Drawing.Point(135, 352);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 30);
-            this.button5.TabIndex = 101;
-            this.button5.Text = "検索";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnAppeal.Location = new System.Drawing.Point(30, 352);
+            this.btnAppeal.Name = "btnAppeal";
+            this.btnAppeal.Size = new System.Drawing.Size(75, 30);
+            this.btnAppeal.TabIndex = 103;
+            this.btnAppeal.Text = "アピール";
+            this.btnAppeal.UseVisualStyleBackColor = true;
+            this.btnAppeal.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button6
+            // btnFind
             // 
-            this.button6.Location = new System.Drawing.Point(30, 352);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 30);
-            this.button6.TabIndex = 103;
-            this.button6.Text = "アピール";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnFind.Location = new System.Drawing.Point(135, 352);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 30);
+            this.btnFind.TabIndex = 101;
+            this.btnFind.Text = "検索";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.button5_Click);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpFind);
+            this.Controls.Add(this.grpAdd);
             this.Name = "Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAddScore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFindYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAddYear)).EndInit();
+            this.grpAdd.ResumeLayout(false);
+            this.grpAdd.PerformLayout();
+            this.grpFind.ResumeLayout(false);
+            this.grpFind.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown nudAddScore;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblAddSubject;
+        private System.Windows.Forms.Label lblAddScore;
+        private System.Windows.Forms.Label lblAddStudent;
+        private System.Windows.Forms.Button btnTable;
+        private System.Windows.Forms.ComboBox cmdAddSubject;
+        private System.Windows.Forms.ComboBox cmdAddStudent;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox cmdFindSemester;
+        private System.Windows.Forms.ComboBox cmdFindSubjct;
+        private System.Windows.Forms.Label lblFindSubject;
+        private System.Windows.Forms.NumericUpDown nudFindYear;
+        private System.Windows.Forms.Label lblFindYear;
+        private System.Windows.Forms.Label lblFindSemester;
+        private System.Windows.Forms.Label lblAddSemester;
+        private System.Windows.Forms.Label lblAddYear;
+        private System.Windows.Forms.NumericUpDown nudAddYear;
+        private System.Windows.Forms.ComboBox cmdAddSemester;
+        private System.Windows.Forms.Label lblSeason;
+        private System.Windows.Forms.GroupBox grpAdd;
+        private System.Windows.Forms.GroupBox grpFind;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnAppeal;
     }
 }
 

@@ -20,7 +20,7 @@ namespace TestScoring
         {
             InitializeComponent();
 
-            dataGridView1.ReadOnly = true;
+            dgvTable.ReadOnly = true;
 
             SucceededCreatingWindow = InitAllSeason(seasonList);
         }
@@ -29,7 +29,7 @@ namespace TestScoring
         {
             InitializeComponent();
 
-            dataGridView1.ReadOnly = true;
+            dgvTable.ReadOnly = true;
 
             if (string.IsNullOrEmpty(searchSubjectName))
             {
@@ -52,12 +52,12 @@ namespace TestScoring
 
             sort.SortList(seasonList, Sort.SortKey.Season);
 
-            dataGridView1.ColumnCount = 4;
+            dgvTable.ColumnCount = 4;
 
-            dataGridView1.Columns[0].HeaderText = "時期";
-            dataGridView1.Columns[1].HeaderText = "教科名";
-            dataGridView1.Columns[2].HeaderText = "名前";
-            dataGridView1.Columns[3].HeaderText = "点数";
+            dgvTable.Columns[0].HeaderText = "時期";
+            dgvTable.Columns[1].HeaderText = "教科名";
+            dgvTable.Columns[2].HeaderText = "名前";
+            dgvTable.Columns[3].HeaderText = "点数";
 
             if (seasonList.Count == 0)
             {
@@ -77,7 +77,7 @@ namespace TestScoring
                     {
                         var studentInfo = subject.studentInfos[k];
 
-                        dataGridView1.Rows.Add(season.Year + season.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
+                        dgvTable.Rows.Add(season.Year + season.semester, subject.Name, studentInfo.Name, studentInfo.Score);
                     }
                 }
             }
@@ -91,14 +91,14 @@ namespace TestScoring
 
             sort.SortList(seasonList, Sort.SortKey.Subject);
 
-            dataGridView1.ColumnCount = 4;
+            dgvTable.ColumnCount = 4;
 
-            dataGridView1.Columns[0].HeaderText = "時期";
-            dataGridView1.Columns[1].HeaderText = "教科名";
-            dataGridView1.Columns[2].HeaderText = "名前";
-            dataGridView1.Columns[3].HeaderText = "点数";
+            dgvTable.Columns[0].HeaderText = "時期";
+            dgvTable.Columns[1].HeaderText = "教科名";
+            dgvTable.Columns[2].HeaderText = "名前";
+            dgvTable.Columns[3].HeaderText = "点数";
 
-            Season? searchSeason = seasonList.Find(season => season.Year + season.prophaseOrAnaphase == searchSeasonName);
+            Season? searchSeason = seasonList.Find(season => season.Year + season.semester == searchSeasonName);
 
             if(searchSeason == null)
             {
@@ -114,7 +114,7 @@ namespace TestScoring
                 {
                     var studentInfo = subject.studentInfos[j];
 
-                    dataGridView1.Rows.Add(searchSeason.Year + searchSeason.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
+                    dgvTable.Rows.Add(searchSeason.Year + searchSeason.semester, subject.Name, studentInfo.Name, studentInfo.Score);
                 }
             
             }
@@ -128,13 +128,13 @@ namespace TestScoring
 
             sort.SortList(seasonList, Sort.SortKey.Subject);
 
-            dataGridView1.ColumnCount = 3;
+            dgvTable.ColumnCount = 3;
 
-            dataGridView1.Columns[0].HeaderText = "教科名";
-            dataGridView1.Columns[1].HeaderText = "名前";
-            dataGridView1.Columns[2].HeaderText = "点数";
+            dgvTable.Columns[0].HeaderText = "教科名";
+            dgvTable.Columns[1].HeaderText = "名前";
+            dgvTable.Columns[2].HeaderText = "点数";
 
-            Season? searchSeason = seasonList.Find(season => season.Year + season.prophaseOrAnaphase == searchSeasonName);
+            Season? searchSeason = seasonList.Find(season => season.Year + season.semester == searchSeasonName);
 
             if (searchSeason == null)
             {
@@ -154,7 +154,7 @@ namespace TestScoring
             {
                 var studentInfo = searchSubject.studentInfos[i];
 
-                dataGridView1.Rows.Add(searchSubject.Name, studentInfo.Name, studentInfo.Score);
+                dgvTable.Rows.Add(searchSubject.Name, studentInfo.Name, studentInfo.Score);
             }
             return true;
         }        

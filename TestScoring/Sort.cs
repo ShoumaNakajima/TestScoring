@@ -35,7 +35,7 @@ namespace TestScoring
         {
             seasonList.Sort(
              (lhs, rhs) =>
-                 rhs.prophaseOrAnaphase.CompareTo(lhs.prophaseOrAnaphase)
+                 rhs.semester.CompareTo(lhs.semester)
              );
 
             seasonList.Sort(

@@ -35,35 +35,35 @@ namespace TestScoring
         {
             //numericUpDown1の初期化
             // 最小値
-            numericUpDown1.Minimum = 0;
+            nudAddScore.Minimum = 0;
             // 最大値
-            numericUpDown1.Maximum = 100;
+            nudAddScore.Maximum = 100;
             // 初期値
-            numericUpDown1.Value = 50;
+            nudAddScore.Value = 50;
 
             //numericUpDown2の初期化
             // 最小値
-            numericUpDown2.Minimum = 0;
+            nudFindYear.Minimum = 0;
             // 最大値
-            numericUpDown2.Maximum = 10000;
+            nudFindYear.Maximum = 10000;
             // 初期値
-            numericUpDown2.Value = 2020;
+            nudFindYear.Value = 2020;
 
             //numericUpDown3の初期化
             // 最小値
-            numericUpDown3.Minimum = 0;
+            nudAddYear.Minimum = 0;
             // 最大値
-            numericUpDown3.Maximum = 10000;
+            nudAddYear.Maximum = 10000;
             // 初期値
-            numericUpDown3.Value = 2020;
+            nudAddYear.Value = 2020;
 
             string[] items = { "前期","後期" };
             //combobox3の初期化
-            comboBox3.Text = items[0];
-            comboBox3.Items.AddRange(items);
+            cmdFindSemester.Text = items[0];
+            cmdFindSemester.Items.AddRange(items);
             //combobox4の初期化
-            comboBox4.Text = items[0];
-            comboBox4.Items.AddRange(items);
+            cmdAddSemester.Text = items[0];
+            cmdAddSemester.Items.AddRange(items);
 
             //リストの初期化
             seasons = new List<Season>();
@@ -136,10 +136,10 @@ namespace TestScoring
                 }
             }
 
-            comboBox1.Items.AddRange(subjectsName);
-            comboBox5.Items.AddRange(subjectsName);
+            cmdAddSubject.Items.AddRange(subjectsName);
+            cmdFindSubjct.Items.AddRange(subjectsName);
 
-            comboBox2.Items.AddRange(studentsName);
+            cmdAddStudent.Items.AddRange(studentsName);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -236,12 +236,12 @@ namespace TestScoring
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBox1.Text))
+            if (string.IsNullOrEmpty(cmdAddSubject.Text))
             {
                 MessageBox.Show("教科名が入力されていません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (string.IsNullOrEmpty(comboBox2.Text))
+            else if (string.IsNullOrEmpty(cmdAddStudent.Text))
             {
                 MessageBox.Show("生徒名が入力されていません", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -280,7 +280,7 @@ namespace TestScoring
         {
             for(int i = 0;i < seasons.Count;i++)
             {
-                if ((seasons[i].Year + seasons[i].prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text))
+                if ((seasons[i].Year + seasons[i].semester) == (nudAddYear.Value + cmdAddSemester.Text))
                 {
                     return false;
                 }
@@ -290,13 +290,13 @@ namespace TestScoring
 
         private bool FindSubject()
         {
-            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.semester) == (nudAddYear.Value + cmdAddSemester.Text));
 
             if (season == null) return false;
 
             for (int i = 0; i < season.subjects.Count; i++)
             {
-                if (season.subjects[i].Name == comboBox1.Text)
+                if (season.subjects[i].Name == cmdAddSubject.Text)
                 {
                     return false;
                 }
@@ -306,17 +306,17 @@ namespace TestScoring
 
         private bool FindStudent()
         {
-            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.semester) == (nudAddYear.Value + cmdAddSemester.Text));
 
             if (season == null) return false;
 
-            Subject? subject = season.subjects.Find(subjectName => subjectName.Name == comboBox1.Text);
+            Subject? subject = season.subjects.Find(subjectName => subjectName.Name == cmdAddSubject.Text);
 
             if (subject == null) return false;
 
             for (int i = 0; i < season.subjects.Count; i++)
             {
-                if (subject.Name == comboBox2.Text)
+                if (subject.Name == cmdAddStudent.Text)
                 {
                     return false;
                 }
@@ -326,15 +326,15 @@ namespace TestScoring
 
         private bool CreateSeason()
         {
-            Season season = new Season((int) numericUpDown3.Value, comboBox4.Text);
+            Season season = new Season((int) nudAddYear.Value, cmdAddSemester.Text);
 
-            season.AddSubject(comboBox1.Text, comboBox2.Text, (int) numericUpDown1.Value);
+            season.AddSubject(cmdAddSubject.Text, cmdAddStudent.Text, (int) nudAddScore.Value);
 
             bool isExist = false;
 
             for (int i = 0; i < seasons.Count; i++)
             {
-                if ((seasons[i].Year.ToString() + seasons[i].prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text))
+                if ((seasons[i].Year.ToString() + seasons[i].semester) == (nudAddYear.Value + cmdAddSemester.Text))
                 {
                     isExist = true;
                 }
@@ -352,17 +352,17 @@ namespace TestScoring
 
         private bool CreateSubject()
         {
-            Subject subject = new Subject(comboBox1.Text);
+            Subject subject = new Subject(cmdAddSubject.Text);
 
-            subject.AddStudentInfo(comboBox2.Text, (int)numericUpDown1.Value);
+            subject.AddStudentInfo(cmdAddStudent.Text, (int)nudAddScore.Value);
 
             bool isExist = false;
 
-            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.semester) == (nudAddYear.Value + cmdAddSemester.Text));
 
             for (int i = 0; i < season.subjects.Count; i++)
             {
-                if (season.subjects[i].Name == comboBox1.Text)
+                if (season.subjects[i].Name == cmdAddSubject.Text)
                 {
                     isExist = true;
                 }
@@ -381,17 +381,17 @@ namespace TestScoring
 
         private bool CreateStudent()
         {
-            StudentInfo studentInfo = new StudentInfo(comboBox2.Text, (int)numericUpDown1.Value);
+            StudentInfo studentInfo = new StudentInfo(cmdAddStudent.Text, (int)nudAddScore.Value);
 
             bool isExist = false;
 
-            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.prophaseOrAnaphase) == (numericUpDown3.Value + comboBox4.Text));
+            Season? season = seasons.Find(seasonName => (seasonName.Year + seasonName.semester) == (nudAddYear.Value + cmdAddSemester.Text));
 
-            Subject? subject = season.subjects.Find(subjectName => subjectName.Name == comboBox1.Text);
+            Subject? subject = season.subjects.Find(subjectName => subjectName.Name == cmdAddSubject.Text);
 
             for(int i = 0;i < subject.studentInfos.Count; i++)
             {
-                if(subject.studentInfos[i].Name == comboBox2.Text)
+                if(subject.studentInfos[i].Name == cmdAddStudent.Text)
                 {
                     isExist = true;
                 }
@@ -412,31 +412,31 @@ namespace TestScoring
         {   
             bool isDuplicateSubjectName = false;
 
-            for(int i = 0;i < comboBox1.Items.Count; i++)
+            for(int i = 0;i < cmdAddSubject.Items.Count; i++)
             {
-                if (comboBox1.Text == comboBox1.Items[i].ToString())
+                if (cmdAddSubject.Text == cmdAddSubject.Items[i].ToString())
                 {
                     isDuplicateSubjectName = true;
                 }
             }
             if (isDuplicateSubjectName == false)
             {
-                comboBox1.Items.Add(comboBox1.Text);
-                comboBox5.Items.Add(comboBox1.Text);
+                cmdAddSubject.Items.Add(cmdAddSubject.Text);
+                cmdFindSubjct.Items.Add(cmdAddSubject.Text);
             }
             
             bool isDuplicateStudentName = false;
             
-            for (int j = 0; j < comboBox2.Items.Count; j++)
+            for (int j = 0; j < cmdAddStudent.Items.Count; j++)
             {
-                if (comboBox2.Text == comboBox2.Items[j].ToString())
+                if (cmdAddStudent.Text == cmdAddStudent.Items[j].ToString())
                 {
                     isDuplicateStudentName = true;
                 }
             }
             if (isDuplicateStudentName == false)
             {
-                comboBox2.Items.Add(comboBox2.Text);
+                cmdAddStudent.Items.Add(cmdAddStudent.Text);
             }
         }
 
@@ -448,7 +448,7 @@ namespace TestScoring
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Table table = new Table(seasons, numericUpDown2.Value + comboBox3.Text, comboBox5.Text);
+            Table table = new Table(seasons, nudFindYear.Value + cmdFindSemester.Text, cmdFindSubjct.Text);
             table.Show();
         }
 
@@ -487,6 +487,21 @@ namespace TestScoring
                 "MessageBoxを用いてUI/UXに配慮して作った" + Environment.NewLine +
                 "教科名や生徒の名前などのコンボボックスの要素を追加するたびに更新して入力しやすいように配慮した" + Environment.NewLine
                 , "アピールポイント", MessageBoxButtons.OK,MessageBoxIcon.None);
+        }
+
+        private void season_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

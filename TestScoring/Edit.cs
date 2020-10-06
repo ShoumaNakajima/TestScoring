@@ -47,12 +47,12 @@ namespace TestScoring
 
             sort.SortList(seasons, Sort.SortKey.Season);
 
-            dataGridView1.ColumnCount = 4;
+            dgvEditTable.ColumnCount = 4;
 
-            dataGridView1.Columns[0].HeaderText = "時期";
-            dataGridView1.Columns[1].HeaderText = "教科名";
-            dataGridView1.Columns[2].HeaderText = "名前";
-            dataGridView1.Columns[3].HeaderText = "点数";
+            dgvEditTable.Columns[0].HeaderText = "時期";
+            dgvEditTable.Columns[1].HeaderText = "教科名";
+            dgvEditTable.Columns[2].HeaderText = "名前";
+            dgvEditTable.Columns[3].HeaderText = "点数";
 
             foreach (Season season in seasons)
             {
@@ -60,7 +60,7 @@ namespace TestScoring
                 {
                     foreach (StudentInfo studentInfo in subject.studentInfos)
                     {
-                        this.dataGridView1.Rows.Add(season.Year + season.prophaseOrAnaphase, subject.Name, studentInfo.Name, studentInfo.Score);
+                        this.dgvEditTable.Rows.Add(season.Year + season.semester, subject.Name, studentInfo.Name, studentInfo.Score);
                     }
                 }
             }
@@ -83,9 +83,9 @@ namespace TestScoring
 
         private void DeleteItem()
         {
-            DataGridViewSelectedRowCollection src = dataGridView1.SelectedRows;
+            DataGridViewSelectedRowCollection src = dgvEditTable.SelectedRows;
 
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            foreach (DataGridViewRow row in dgvEditTable.SelectedRows)
             {
                 int tableRow = 0;
 
@@ -126,7 +126,7 @@ namespace TestScoring
             {
                 if (src[i].Index != src.Count + 1)
                 {
-                    dataGridView1.Rows.RemoveAt(src[i].Index);
+                    dgvEditTable.Rows.RemoveAt(src[i].Index);
                 }
             }
         }

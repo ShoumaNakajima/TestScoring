@@ -12,7 +12,7 @@ namespace TestScoring
     {
         public int Year { get; set; }
 
-        public string? prophaseOrAnaphase;
+        public string? semester;
 
         public List<Subject> subjects;
 
@@ -21,7 +21,7 @@ namespace TestScoring
         public Season(int year, string poa)
         {
             Year = year;
-            prophaseOrAnaphase = poa;
+            semester = poa;
 
             subjects = new List<Subject>();
         }
